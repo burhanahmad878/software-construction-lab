@@ -1,7 +1,6 @@
 ﻿from unittest.mock import Mock
 
 import pytest
-
 from errors import ConflictError, ValidationError
 from gradebook import add_assessment
 

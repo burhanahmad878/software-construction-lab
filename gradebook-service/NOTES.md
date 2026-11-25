@@ -148,3 +148,4 @@ bisect found first 'bad' commit
 | Bug A | `self.path.removeprefix("/students/")` kept trailing `/` and query strings | Strip query string with `.split("?", 1)[0]` and `.strip("/")` before extracting `sid` | `test_student_is_found_with_a_trailing_slash_or_query` |
 | Bug B | `add_assessment` mutated `state["assessments"]` before `save()` without rollback on `OSError` | Wrapped `save()` in `try...except` to delete the added assessment, log `log.warning(...)`, and re-raise | `test_failed_save_leaves_no_trace` |
 | Bug C | `UnicodeDecodeError: 'utf-8' codec can't decode byte 0x80 in position 0: invalid start byte` | Decode body inside `try...except ValueError` in `_parse_json_body` to raise `ValidationError` (HTTP 400) | `test_body_that_is_not_utf8_is_a_bad_request` |
+
